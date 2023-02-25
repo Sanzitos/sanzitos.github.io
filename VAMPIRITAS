@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exibir Imagens com Senhas</title>
+	<style>
+		body {
+			background-color: red;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+		}
+		
+		input[type=password] {
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 10px;
+		}
+		
+		button {
+			padding: 10px;
+			border-radius: 5px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+		}
+		
+		button:hover {
+			background-color: #3e8e41;
+		}
+		
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<label for="senha">Digite a senha:</label>
+	<input type="password" id="senha" name="senha">
+	<button onclick="verificarSenha()">Enviar</button>
+	
+	<div id="imagens"></div>
+	
+	<script>
+		function verificarSenha() {
+			var senhaInserida = document.getElementById("senha").value;
+			if (senhaInserida === "BONK!") {
+				document.getElementById("imagens").innerHTML = '<img src="https://i.imgur.com/vH91F2L.png">';
+			} else {
+				alert("Senha incorreta!");
+			}
+		}
+	</script>
+</body>
+</html>
